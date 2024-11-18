@@ -3,25 +3,7 @@
 Здесь находится код микросервиса SSO для авторизации
 ## Структура проекта
 ```bash
-.
-├── api
-│ └── helloworld.go # Сгенерированный gRPC код
-├── bin # Директория для бинарников
-├── cmd
-│ ├── client
-│ │ └── main.go # gRPC client implementation
-│ └── server
-│   └── main.go # gRPC server implementation
-├── compile_proto.sh # Скрипт для компиляции protobuf файлов
-├── go.mod # Go module файлы
-├── go.sum # Go dependencies файлы
-├── grpc
-│ ├── helloworld # Сгенерированный gRPC код
-│ ├── helloworld_grpc.pb.go
-│ └── helloworld.pb.go
-├── proto
-│ └── helloworld.proto # Protobuf файл
-└── README.md # Инструкция от этого того самого
+
 ```
 
 ## Getting Started (Геттинг стартед)
