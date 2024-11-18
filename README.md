@@ -3,7 +3,64 @@
 Здесь находится код микросервиса SSO для авторизации
 ## Структура проекта
 ```bash
-
+sso-service/
+├── api/
+│   ├── proto/
+│   │   ├── auth.proto               # Протокол для сервисов авторизации
+│   │   ├── user.proto               # Протокол для сервисов пользователя
+│   │   ├── client.proto             # Протокол для сервисов клиента
+│   │   └── ...                      # Другие proto-файлы
+│   └── pb/
+│       ├── auth.pb.go               # Сгенерированный код из auth.proto
+│       ├── user.pb.go               # Сгенерированный код из user.proto
+│       ├── client.pb.go             # Сгенерированный код из client.proto
+│       └── ...                      # Другие сгенерированные файлы
+├── cmd/
+│   └── server/
+│       └── main.go                  # Точка входа в приложение
+├── internal/
+│   ├── config/
+│   │   └── config.go                # Конфигурация приложения
+│   ├── server/
+│   │   └── server.go                # Настройка gRPC сервера
+│   ├── handlers/
+│   │   ├── auth_handler.go          # Реализация gRPC сервисов авторизации
+│   │   ├── user_handler.go          # Реализация gRPC сервисов пользователя
+│   │   ├── client_handler.go        # Реализация gRPC сервисов клиента
+│   │   └── ...                      # Другие обработчики
+│   ├── services/
+│   │   ├── auth_service.go          # Бизнес-логика авторизации
+│   │   ├── user_service.go          # Бизнес-логика пользователей
+│   │   ├── client_service.go        # Бизнес-логика клиентов
+│   │   └── ...                      # Другие сервисы
+│   ├── repositories/
+│   │   ├── user_repository.go       # Доступ к данным пользователей
+│   │   ├── client_repository.go     # Доступ к данным клиентов
+│   │   ├── role_repository.go       # Доступ к данным ролей
+│   │   ├── permission_repository.go # Доступ к данным разрешений
+│   │   └── token_repository.go      # Доступ к данным токенов
+│   ├── models/
+│   │   ├── user.go                  # Модель пользователя
+│   │   ├── client.go                # Модель клиента
+│   │   ├── role.go                  # Модель роли
+│   │   ├── permission.go            # Модель разрешения
+│   │   ├── token.go                 # Модель токена
+│   │   └── session.go               # Модель сессии
+│   ├── utils/
+│   │   ├── hash.go                  # Хеширование паролей
+│   │   ├── jwt.go                   # Работа с JWT токенами
+│   │   └── validator.go             # Валидация данных
+│   └── database/
+│       └── connection.go            # Подключение к базе данных
+├── migrations/
+│   └── *.sql                        # SQL файлы для миграций
+├── scripts/
+│   └── generate_proto.sh            # Скрипт для генерации gRPC кода из proto-файлов
+├── Dockerfile                       # Docker-контейнеризация
+├── go.mod                           # Модуль Go
+├── go.sum                           # Контрольные суммы зависимостей
+├── Makefile                         # Сценарии сборки и запуска
+└── README.md                        # Документация проекта
 ```
 
 ## Getting Started (Геттинг стартед)
